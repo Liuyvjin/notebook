@@ -97,6 +97,8 @@ void GaussianBlur(InputArray src,OutputArray dst, Size ksize,
 
 [回到目录](#目录)
 
+[滤波函数—代码](<https://github.com/Liuyvjin/OpenCV_begin/tree/master/EX4>)
+
 ## 二、非线性滤波
 
 ### 1. 非线性滤波简介
@@ -153,3 +155,4 @@ void bilateralFilter(InputArray src, OutputArraydst, int d,
 
 [回到目录](#目录)
 
+[滤波函数—代码](<https://github.com/Liuyvjin/OpenCV_begin/tree/master/EX4>)
