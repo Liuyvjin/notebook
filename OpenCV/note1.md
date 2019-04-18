@@ -1,5 +1,7 @@
 # OpenCV 学习笔记
 
+#### 目录
+
 [TOC]
 
 ## 一、开始使用
@@ -32,7 +34,7 @@ find_package(OpenCV REQUIRED)
 target_link_libraries(Proj_name ${OpenCV_LIBS})#Proj_name是工程名
 ```
 
-[回到目录](#OpenCV 学习笔记)
+[回到目录](#目录)
 
 ## 二、 图像的读取、显示和写入
 
@@ -96,7 +98,7 @@ bool imwrite(const string& filename, InputArray img, const
 - 第二个参数，InputArray类型的img，一般填一个Mat类型的图像数据就行了。
 - 第三个参数，const vector<int>&类型的params，表示为特定格式保存的参数编码，它有默认值vector<int>()，所以一般情况下不需要填写。
 
-[回到目录](#OpenCV 学习笔记)
+[回到目录](#目录)
 
 ## 三、图像的叠加
 
@@ -151,7 +153,9 @@ void addWeighted(InputArray src1, double alpha,
 $$
 dst = src_1\times \alpha +src_2\times \beta +\gamma
 $$
-[回到目录](#OpenCV 学习笔记)
+[图像叠加—代码](<https://github.com/Liuyvjin/OpenCV_begin/tree/master/EX1>)
+
+[回到目录](#目录)
 
 ## 四、 多通道图像的分离 和 混合
 
@@ -174,7 +178,7 @@ void merge(InputArrayOfArrays mv, OutputArray dst);
 
 [图像的分离和混合—代码](<https://github.com/Liuyvjin/OpenCV_begin/tree/master/EX2>)
 
-[回到目录](#OpenCV 学习笔记)
+[回到目录](#目录)
 
 ## 五、创建Trackbar & 图像对比度、亮度值调整
 
@@ -219,5 +223,5 @@ dstImage = srcImage * ContrastValue + BrightValue;
 
 [用轨迹条调整亮度对比度—代码](<https://github.com/Liuyvjin/OpenCV_begin/tree/master/EX3>)
 
-[回到目录](#OpenCV 学习笔记)
+[回到目录](#目录)
 
