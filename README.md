@@ -10,3 +10,6 @@
 2. [OpenCV滤波](./OpenCV/OpenCV滤波.md)
 3. [OpenCV形态学图像处理](./OpenCV/OpenCV形态学图像处理.md)
 
+## 3. [其他笔记](./others)
+1. [终端快捷操作](./others/终端快捷操作.md)
+

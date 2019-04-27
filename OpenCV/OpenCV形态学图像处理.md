@@ -83,7 +83,7 @@ C++: void erode(InputArray src, OutputArray dst, InputArray kernel,
 
 （1）概念：**开运算 = 先腐蚀，再膨胀**。过程示意图如下。**注意**不能将图中黑色区域理解为低光区，而应该理解为作用对象区（即开运算可以看做是针对这个对象的），白色区域为背景区。而在OpenCV中默认作用对象是高光区。
 
-![开运算](/home/liujin/note/OpenCV/pics/开运算.png)
+![开运算](./pics/开运算.png)
 
 （2）特点：
 
@@ -94,7 +94,7 @@ C++: void erode(InputArray src, OutputArray dst, InputArray kernel,
 
 （1）概念：闭运算与开运算相反。闭运算=先膨胀，再腐蚀。
 
-![闭运算](/home/liujin/note/OpenCV/pics/闭运算.png)
+![闭运算](./pics/闭运算.png)
 
 （2）特点：
 
