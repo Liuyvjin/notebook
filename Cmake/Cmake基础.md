@@ -4,6 +4,8 @@
 
 [TOC]
 
+---
+
 ## 一. Cmake简介
 
 ### 1. gcc
@@ -52,8 +54,8 @@ SET(valname main.c src1.c src2.c)
 >
 > 在我们使用`PROJECT`指令指定工程名<projectname>后，Cmake会自动生成两个变量：
 >
-> * <projectname>_BINARY_DIR：可执行程序目录
-> *  <projectname>_SOURCE_DIR：源文件目录
+> * <projectname>_BINARY_DIR：可执行程序目录，其实是执行cmake命令时的当前目录，比如在build/外部编译，那么就是build的绝对路径
+> *  <projectname>_SOURCE_DIR：源文件目录，就是主Cmakelists.txt所在的绝对路径。
 >
 > 我们可以使用它们。
 >
@@ -150,7 +152,7 @@ MESSAGE(STATUS "This is binary dir" ${PROJECT_BINARY_DIR})
 ### 3. 添加要编译的可执行程序
 
 ```cmake
-ADD_EXECUTABLE(hello main.c src1.c)
+ADD_EXECUTABLE(hello main.c src1.c)  # hello为一个target
 ```
 
 等效于在makefile里写
@@ -168,8 +170,8 @@ hello: main.c src1.c
 ADD_SUBDIRECTORY(src  bin  exclude)
 ```
 
-* src：将源文件存放的src目录加入工程，**相对于主目录**
-* bin：将编译输出到bin，若不指定则输出到src中，此处的bin是相对于**编译时所在目录**
+* src：将源文件存放的src目录加入工程，**相对于主目录**，也即`PROJECT_SOURCE_DIR`
+* bin：将编译输出到bin，若不指定则输出到src中，此处的bin是相对于**编译时所在目录**，也即`PROJECT_BINARY_DIR`
 * exclude：编译时排除的目录
 
 注意：采用外部编译时，例如在build目录下面`cmake ..`，那么输出目录就会以build/作为相对路径的参考，因此会在build/下生成一个bin/目录来存放二进制文件，若没指定bin，则会生成build/src目录。
@@ -294,5 +296,5 @@ INSTALL(CODE " MESSAGE(\"Sample install message.\") ") # 输出提示
 
 [回到目录](#目录)
 
-## 四、一个简单的实例[参考代码](./基础实例hello)
+## 四、一个简单的实例[参考代码](./cmake基础实例)
 
