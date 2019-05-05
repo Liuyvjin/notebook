@@ -102,6 +102,18 @@ C++: void erode(InputArray src, OutputArray dst, InputArray kernel,
 * 结构元素（核）大小的不同将导致滤波效果的不同。 
   不同形状核的选择会导致不同的分割。
 
+### 3. 效果图：
+
+从左到右分别是：原图、开运算、闭运算
+
+<figure class="third">
+    <img src="./pics/皮.png" width="200" /> 
+    <img src="./pics/开运算效果.png" width="200" />
+    <img src="./pics/闭运算效果.png" width="200" />
+</figure>
+
+[回到目录](#目录)
+
 ## 三、形态学梯度，顶帽，黑帽
 
 ### 1. 形态学梯度
@@ -113,15 +125,30 @@ C++: void erode(InputArray src, OutputArray dst, InputArray kernel,
 * 形态学梯度操作的输出像素值是在对应结构元素区域中灰度级的最大值减去最小值。 
 * 对二值图像进行形态学操作可以将**团块**(blob，就是目标对象去除毛刺，细桥剩下的部分)**的边缘**突出出来,可以用形态学梯度来保留物体的边缘轮廓。
 
+(3) 效果图：
+
+<figure class="half">
+    <img src="./pics/皮.png" width="300" /> 
+    <img src="./pics/形态学梯度效果.png" width="300" />
+</figure>
+
 ### 2. 顶帽（Top Hat）
 
-（1）概念：**原图与开运算之差**。开运算去掉了目标对象区的小桥，毛刺等，顶帽操作就是获得这些被去掉这些小桥，毛刺。
+（1）概念：**原图 - 开运算 = 顶帽**。开运算去掉了目标对象区的小桥，毛刺等，顶帽操作就是获得这些被去掉这些小桥，毛刺。
+
+（2）效果图：
+
+![顶帽效果](./pics/顶帽效果.png)
 
 ### 3. 黑帽（Black Hat）
 
-（1）概念：**闭运算与原图之差**。
+（1）概念：**闭运算 - 原图 = 黑帽**。得到被弥合的裂缝。
 
-### 4. OpenCV实现  morphologyEx
+（2）效果图：
+
+![顶帽效果](./pics/黑帽效果.png)
+
+### 4. OpenCV实现：`morphologyEx()`
 
 ```cpp
 void morphologyEx( InputArray _src,OutputArray _dst, int op,
@@ -147,7 +174,6 @@ void morphologyEx( InputArray _src,OutputArray _dst, int op,
 
 使用morphologyEx()函数，一般我们只需要填前面的四个参数，后面的四个参数都有默认值。
 
+[回到目录](#目录)
 
-
-
-
+[开闭运算等代码](<https://github.com/Liuyvjin/OpenCV_begin/tree/master/EX6>)
