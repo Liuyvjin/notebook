@@ -16,6 +16,7 @@
 1. [OpenCV基础](./OpenCV/OpenCV基础.md)
 2. [OpenCV滤波](./OpenCV/OpenCV滤波.md)
 3. [OpenCV形态学图像处理](./OpenCV/OpenCV形态学图像处理.md)
+4. [OpenCV边缘检测](./OpenCV/OpenCV边缘检测.md)
 
 ## 4. [其他笔记](./others)
 1. [终端快捷操作](./others/终端快捷操作.md)
