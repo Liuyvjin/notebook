@@ -22,7 +22,7 @@
 
 像这样的$h(x,y)$称作**滤波器**，或者**核**
 
-### 2.方框滤波 boxblur
+### 2. 方框滤波 boxFilter
 
 ```cpp
 C++: void boxFilter(InputArray src,OutputArray dst, int ddepth, 
@@ -33,7 +33,7 @@ C++: void boxFilter(InputArray src,OutputArray dst, int ddepth,
 + src，InputArray类型，输入图像，填Mat类的对象即可。该函数对通道是独立处理的，且可以处理任意通道数的图片，但需要注意，待处理的图片深度应该为CV_8U, CV_16U, CV_16S, CV_32F 以及 CV_64F之一。
 + dst，OutputArray类型，即目标图像，需要和源图片有一样的尺寸和类型。
 + ddepth，int类型，输出图像的深度，-1代表使用原图深度，即src.depth()。
-+ ksize，Size类型，内核的大小。一般这样写Size( w,h )来表示内核的大小( 其中，w 为像素宽度， h为像素高度)。
++ ksize，Size类型，内核的大小。一般这样写Size(w, h)来表示内核的大小( 其中，w 为像素宽度， h为像素高度)。
 + anchor，Point类型，表示锚点（即被核中对应被平滑的那个点），注意有默认值Point(-1,-1)。如果这个点坐标是负值的话，就表示取核的中心为锚点，所以默认值表示这个锚点在核的中心。
 + normalize，bool类型，默认值为true，一个标识符，表示内核是否归一化（normalized），也即取平均值。后面有介绍。
 + borderType，int类型，用于推断图像外部像素的某种边界模式。有默认值BORDER_DEFAULT，我们一般不去管它。
@@ -132,14 +132,14 @@ void medianBlur( InputArray _src0,OutputArray _dst, int ksize )
 $$
 h(c_x,c_y,x,y) = exp(-\frac{(x-c_x)^2+(y-c_y)^2}{2\sigma _d^2})
 $$
-$h(c_x,c_y,x,y)$表示$(c_x,c_y)$临域内，某一点$(x,y)​$的对应的权值，所以距离中心点越远的点对应权值越小，对输出值影响也就越小。
+$h(c_x,c_y,x,y)$表示$(c_x,c_y)$临域内，某一点$(x,y)$的对应的权值，所以距离中心点越远的点对应权值越小，对输出值影响也就越小。
 
 * 双边滤波的权值函数：
 
 $$
 h(c_x,c_y,x,y) = exp(-\frac{(x-c_x)^2+(y-c_y)^2}{2\sigma _s^2}-\frac{||f(c_x,c_y)-f(x,y)||^2}{2\sigma_c^2})
 $$
-其中$f(x,y)​$表示一点的像素值，因此在考虑位置的前提下，与中心点像素值差距越大的点，对应权值越小，对输出值影响也就越小。
+其中$f(x,y)$表示一点的像素值，因此在考虑位置的前提下，与中心点像素值差距越大的点，对应权值越小，对输出值影响也就越小。
 
 （3）OpenCV函数：
 
