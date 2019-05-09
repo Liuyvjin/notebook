@@ -13,10 +13,13 @@
 5. [Cmake常用指令](./Cmake/Cmake常用命令.md)
 
 ## 3. [OpenCV笔记](./OpenCV)
-1. [OpenCV基础](./OpenCV/OpenCV基础.md)
-2. [OpenCV滤波](./OpenCV/OpenCV滤波.md)
-3. [OpenCV形态学图像处理](./OpenCV/OpenCV形态学图像处理.md)
-4. [OpenCV边缘检测](./OpenCV/OpenCV边缘检测.md)
+1. [Mat类详解](./OpenCV/Mat类详解.md)
+2. [OpenCV基础](./OpenCV/OpenCV基础.md)
+3. [OpenCV滤波](./OpenCV/OpenCV滤波.md)
+4. [OpenCV形态学图像处理](./OpenCV/OpenCV形态学图像处理.md)
+5. [OpenCV边缘检测](./OpenCV/OpenCV边缘检测.md)
+6. [OpenCV图像金字塔](./OpenCV/OpenCV图像金字塔.md)
+7. [OpenCV霍夫变换](./OpenCV/OpenCV霍夫变换.md)
 
 ## 4. [其他笔记](./others)
 1. [终端快捷操作](./others/终端快捷操作.md)
