@@ -122,7 +122,7 @@ void Sobel (InputArray src, OutputArray dst, int ddepth,//输出图像的深度
   若src.depth() = CV_64F, 取ddepth = -1/CV_64F
 * dx，int类型，x方向上的差分阶数。
 * dy，int类型，y方向上的差分阶数。
-* ksize，int类型，有默认值3，表示Sobel核的大小;必须取1，3，5或7。
+* ksize，int类型，有默认值3，表示Sobel核的大小;必须取3，5或7。
 * scale，double类型，计算导数值时可选的缩放因子，默认值是1，表示默认情况下是没有应用缩放的。我们可以在文档中查阅getDerivKernels的相关介绍，来得到这个参数的更多信息。
 * delta，double类型，表示在结果存入目标图（第二个参数dst）之前可选的delta值，有默认值0。
 * borderType， int类型，边界模式，默认值为BORDER_DEFAULT。这个参数可以在官方文档中borderInterpolate处得到更详细的信息。

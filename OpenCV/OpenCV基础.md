@@ -85,7 +85,7 @@ void imshow(const string& winname, InputArray mat);
 - 如果图像是16位无符号类型（16-bit unsigned）或32位整型（32-bit integer），便用像素值除以256。也就是说，值的范围是[0,255 x 256]映射到[0,255]。
 - 如果图像是32位浮点型（32-bit floating-point），像素值便要乘以255。也就是说，该值的范围是[0,1]映射到[0,255]。
 
-### 4. 写入图像 `imwrite`
+### 4. 写入图像`imwrite`
 
 将图像保存到指定的文件。图像格式是基于文件扩展名的
 
@@ -132,7 +132,7 @@ Mat mask = imread("logoImage.jpg", 0);
 logoImage.copyTo(imageROI, mask);
 ```
 
-### 3. 图像线性叠加 `addweighted`
+### 3. 图像线性叠加`addweighted`
 
 ```cpp
 void addWeighted(InputArray src1, double alpha, 
@@ -159,7 +159,7 @@ $$
 
 ## 四、 多通道图像的分离 和 混合
 
-### 1.  分离通道 split
+### 1. 分离通道 split
 
 ```cpp
 void split(const Mat& src, Mat*mvbegin);

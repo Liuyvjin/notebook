@@ -36,7 +36,7 @@ C++: void boxFilter(InputArray src,OutputArray dst, int ddepth,
 + ksize，Size类型，内核的大小。一般这样写Size(w, h)来表示内核的大小( 其中，w 为像素宽度， h为像素高度)。
 + anchor，Point类型，表示锚点（即被核中对应被平滑的那个点），注意有默认值Point(-1,-1)。如果这个点坐标是负值的话，就表示取核的中心为锚点，所以默认值表示这个锚点在核的中心。
 + normalize，bool类型，默认值为true，一个标识符，表示内核是否归一化（normalized），也即取平均值。后面有介绍。
-+ borderType，int类型，用于推断图像外部像素的某种边界模式。有默认值BORDER_DEFAULT，我们一般不去管它。
++ borderType，int类型，由于卷积无法触及边缘，所以需要添加边缘，该参数指定了添加边缘的方法。有默认值BORDER_DEFAULT，我们一般不去管它。
 
 方框滤波一般所用的核为：
 $$
@@ -91,7 +91,7 @@ void GaussianBlur(InputArray src,OutputArray dst, Size ksize,
                   intborderType=BORDER_DEFAULT )
 ```
 
-+ ksize，由于对称性，要满足长宽是奇数。
++ ksize，由于对称性，要满足长宽是奇数。**若为（1×1）相当于没有滤波**
 + sigmaX，double类型，表示高斯核函数在X方向的的标准偏差。
 + sigmaY，double类型，表示高斯核函数在Y方向的的标准偏差。若sigmaY为零，就将它设为sigmaX，如果sigmaX和sigmaY都是0，那么就由ksize.width和ksize.height计算出来。
 
@@ -156,3 +156,22 @@ void bilateralFilter(InputArray src, OutputArraydst, int d,
 [回到目录](#目录)
 
 [滤波函数—代码](<https://github.com/Liuyvjin/OpenCV_begin/tree/master/EX4>)
+
+## 三、自定义卷积
+
+从上面的论述可以看出，滤波实际上就是做卷积。不同的滤波只不过是采用了不同的卷积算子。因此我们也可以自定义内核进行卷积。OpenCV提供了`filter2D`函数来完成这个操作。
+
+```cpp
+void filter2D( InputArray src, OutputArray dst, int ddepth,
+              InputArray kernel, Point anchor=Point(-1,-1),
+              double delta=0, int borderType=BORDER_DEFAULT );
+```
+
+* kernel - InputArray类型，卷积用的核，可以用如下方法定义：
+
+  ```cpp
+  Mat kernel = (Mat_<char>(3,3) << 0,-1,0,-1,5,-1,0,-1,0);
+  Mat kernel = (Mat_<int>(3, 3) << -1, 0, 1, -2, 0, 2, -1, 0, 1); 
+  ```
+
+  

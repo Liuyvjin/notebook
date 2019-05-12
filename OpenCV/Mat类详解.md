@@ -38,9 +38,24 @@
 
    C1，C2，C3，C4则表示通道是1,2,3,4 type一般是在创建Mat对象时设定，**如果要取得Mat的元素数据类型，则无需使用type，使用下面的depth**。
 
+   > OpenCV中的宏定义： depth + (cn-1)<<3
+
+   ```cpp
+   #define CV_8UC1 CV_MAKETYPE(CV_8U,1) //0 + 0<<3 = 0000
+   #define CV_MAKETYPE(depth,cn) (CV_MAT_DEPTH(depth) + (((cn)-1) << CV_CN_SHIFT)) // =depth+(cn-1)<<3
+   #define CV_MAT_DEPTH(flags)  ((flags) & CV_MAT_DEPTH_MASK) // =flag
+   #define CV_MAT_DEPTH_MASK       (CV_DEPTH_MAX - 1) // =111
+   #define CV_DEPTH_MAX  (1 << CV_CN_SHIFT)  // =1000
+   #define CV_CN_SHIFT   3
+   ```
+
+   
+
 9. **depth** - 矩阵中一个通道的数据类型，这个值和type是相关的。例如 type为 CV_16SC2，那么depth则是CV_16S。depth也是一系列的预定义值，将type的预定义值去掉通道信息就是depth值: 
 
    CV_8U， CV_8S， CV_16U， CV_16S， CV_32S， CV_32F， CV_64F
+
+   分别预定义为0,1,2,3,4,5,6
 
 10. **elemSize** - 矩阵一个元素占用的字节数**，**例如：type是CV_16SC3，那么elemSize = 3 * 16 / 8 = 6 bytes
 
@@ -447,7 +462,7 @@ endrow – 一个独占性0基的终止索引（不包含endrow）。
 r – Range 结构包含着起始和终止的索引值。该方法给矩阵指定的行span创建了新的头。
 ```
 
-### 3. 取ROI（注意Rect是先列再行）
+### 3. 取ROI（注意Rect是先列再行，先宽再高）
 
 ```cpp
 ROI1=image1(Rect(500,250,cols,rows)) //左上角位置+列行
@@ -528,11 +543,19 @@ uchar* Mat::ptr(int x, int y)  //返回 data + x * step.p[0] + y * step.p[1];
 template<typename _Tp> _Tp* Mat::ptr(int x,int y)  //返回 data + x * step.p[0] + y * step.p[1];
 （3）使用：
 mat.ptr(0) //返回第一行，第一个字节的指针
-mat.ptr<Vect3b>(0) //元素是CV_8UC3,则返回第一个元素的指针
+mat.ptr<Vec3b>(0) //元素是CV_8UC3,则返回第一个元素的指针
 mat.ptr(x)[y]   //就是指向mat的第x行的第==y+1==个数据，数据类型为无符号的短整型。
 mat.ptr(x,y) //
 （4）可用的索引类型：
    int/int[]
+```
+
+注意：p = A.ptr<Vec3b>(i)和p = A.ptr<Vec3b>(i，j)一样返回的都是Vec3*类型，只不过一个是第i行第一个，另一个是第i行第j个的指针。用p来访问对象，首先要把指针转为对象
+
+```cpp
+(*p)[0]//Vec3b对象的第一个元素
+而 p = A.ptr<Vec3b>(i)[j]与p = A.ptr<Vec3b>(i，j)不同，返回的直接是对象，所以可以
+p[0]来访问对象元素。
 ```
 
 （3）Mat::at
@@ -552,7 +575,13 @@ int / int[] / Point / vector
 调用format(Mat , "参数" )
 
 ```cpp
-cout << format(R,"python") << endl 
-cout << format(R,"numpy" ) << endl
+cout << format(R,3) << endl //python
+cout << format(R,4) << endl //numpy
+FMT_DEFAULT = 0,
+FMT_MATLAB  = 1,
+FMT_CSV     = 2,
+FMT_PYTHON  = 3,
+FMT_NUMPY   = 4,
+FMT_C       = 5,
 ```
 

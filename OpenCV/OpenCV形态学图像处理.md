@@ -65,10 +65,10 @@ C++: void dilate(InputArray src, OutputArray dst, InputArray kernel,
 OpenCV函数：
 
 ```cpp
-C++: void erode(InputArray src, OutputArray dst, InputArray kernel,
-                 Point anchor=Point(-1,-1), int iterations=1,
-                 int borderType=BORDER_CONSTANT,
-                 const Scalar& borderValue=morphologyDefaultBorderValue());
+void erode(InputArray src, OutputArray dst, InputArray kernel,
+           Point anchor=Point(-1,-1), int iterations=1,
+           int borderType=BORDER_CONSTANT,
+           const Scalar&orderValue=morphologyDefaultBorderValue());
 ```
 
 参数同dilate。
@@ -159,13 +159,13 @@ void morphologyEx( InputArray _src,OutputArray _dst, int op,
 * src，输入图像，图像位深应该为以下五种之一：CV_8U, CV_16U,CV_16S, CV_32F 或CV_64F。
 * dst，目标图像，要和源图片有一样的尺寸和类型。
 * op，int类型，表示形态学运算的类型，可以是如下之一的标识符：
-  * MORPH_OPEN – 开运算（Opening operation）
-  * MORPH_CLOSE – 闭运算（Closing operation）
-  * MORPH_GRADIENT -形态学梯度（Morphological gradient）
-  * MORPH_TOPHAT - “顶帽”（“Top hat”）
-  * MORPH_BLACKHAT - “黑帽”（“Black hat“）
-  * MORPH_ERODE - “腐蚀”
-  * MORPH_DILATE - “膨胀”
+  * MORPH_OPEN - 开运算（Opening operation）
+  * MORPH_CLOSE - 闭运算（Closing operation）
+  * MORPH_GRADIENT - 形态学梯度（Morphological gradient）
+  * MORPH_TOPHAT - 顶帽（“Top hat”）
+  * MORPH_BLACKHAT - 黑帽（“Black hat“）
+  * MORPH_ERODE - 腐蚀
+  * MORPH_DILATE - 膨胀
 
 * kernel，InputArray类型的，形态学运算的内核。若为NULL时，默认使用参考点位于中心3x3的核。
 * anchor，Point类型，锚的位置，其有默认值（-1，-1），表示锚位于中心。
