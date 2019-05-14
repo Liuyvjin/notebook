@@ -20,6 +20,7 @@
 5. [OpenCV边缘检测](./OpenCV/OpenCV边缘检测.md)
 6. [OpenCV图像金字塔](./OpenCV/OpenCV图像金字塔.md)
 7. [OpenCV霍夫变换](./OpenCV/OpenCV霍夫变换.md)
+8. [OpenCV漫水填充](./OpenCV/OpenCV漫水填充.md)
 
 ## 4. [其他笔记](./others)
 1. [终端快捷操作](./others/终端快捷操作.md)
