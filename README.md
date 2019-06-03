@@ -22,6 +22,13 @@
 7. [OpenCV霍夫变换](./OpenCV/OpenCV霍夫变换.md)
 8. [OpenCV漫水填充](./OpenCV/OpenCV漫水填充.md)
 
-## 4. [其他笔记](./others)
+## 4. [ROS笔记](./ROS)
+### 4.1 [MoveIt!笔记](./ROS/Moveit!)
+1. [MoveGroup C++接口教程.md](./ROS/Moveit!/Move_Group_C++接口教程.md)
+2. [Robot Model和Robot State介绍.md](./ROS/Moveit!/Robot\ Model和Robot\ State介绍.md)
+### 4.2 其他
+1. [Msg类型](./ROS/Msg类型.md)
+
+## 5. [其他笔记](./others)
 1. [终端快捷操作](./others/终端快捷操作.md)
 

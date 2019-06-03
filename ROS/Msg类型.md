@@ -59,6 +59,44 @@
 >
 > obj1.operation = obj1.ADD;
 
+### 2. OrientationConstraint
+
+这个类型定义了`姿态`约束，与此类似的还有：
+
+```
+JointConstraint.msg        PositionConstraint.msg   
+OrientationConstraint.msg  VisibilityConstraint.msg 
+```
+
+信息戳
+
+* Header header
+
+表示约束的姿态的四元数
+* geometry_msgs/Quaternion orientation
+
+要约束的link的名字
+* string link_name
+
+可选的轴的角度的容差
+float64 absolute_x_axis_tolerance
+float64 absolute_y_axis_tolerance
+float64 absolute_z_axis_tolerance
+
+这个约束的权重，越接近0表示越不重要
+float64 weight
+
+### 3. Constraints
+
+这个类型定义了一个运动规划约束的列表（它由许多2中的约束组成），一个路径必须满足所有的约束，才能被认为是有效的。
+```
+string name
+JointConstraint[] joint_constraints
+PositionConstraint[] position_constraints
+OrientationConstraint[] orientation_constraints
+VisibilityConstraint[] visibility_constraints
+```
+
 ## 三、shape_msgs
 
 ### 1. SolidPrimitive
