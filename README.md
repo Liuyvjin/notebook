@@ -25,7 +25,8 @@
 ## 4. [ROS笔记](./ROS)
 ### 4.1 [MoveIt!笔记](./ROS/Moveit!)
 1. [MoveGroup C++接口教程.md](./ROS/Moveit!/Move_Group_C++接口教程.md)
-2. [Robot Model和Robot State介绍.md](./ROS/Moveit!/Robot\ Model和Robot\ State介绍.md)
+2. [RobotModel和RobotState介绍.md](./ROS/Moveit!/RobotModel和RobotState介绍.md)
+3. [Moveit命令行工具.md](./ROS/Moveit!/Moveit命令行工具.md)
 ### 4.2 其他
 1. [Msg类型](./ROS/Msg类型.md)
 
