@@ -29,6 +29,7 @@
 3. [Moveit命令行工具.md](./ROS/Moveit!/Moveit命令行工具.md)
 4. [PlanningScene教程.md](./ROS/Moveit!/PlanningScene教程.md)
 5. [PlanningScene_ROS_API教程.md](./ROS/Moveit!/PlanningScene_ROS_API教程.md)
+6. [MotionPlanning_API教程.md](./ROS/Moveit!/MotionPlanning_API教程.md)
 
 ### 4.2 其他
 1. [Msg类型](./ROS/Msg类型.md)
