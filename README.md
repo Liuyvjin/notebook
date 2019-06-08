@@ -24,12 +24,15 @@
 
 ## 4. [ROS笔记](./ROS)
 ### 4.1 [MoveIt!笔记](./ROS/Moveit!)
-1. [MoveGroup C++接口教程.md](./ROS/Moveit!/Move_Group_C++接口教程.md)
-2. [RobotModel和RobotState介绍.md](./ROS/Moveit!/RobotModel和RobotState介绍.md)
-3. [Moveit命令行工具.md](./ROS/Moveit!/Moveit命令行工具.md)
-4. [PlanningScene教程.md](./ROS/Moveit!/PlanningScene教程.md)
-5. [PlanningScene_ROS_API教程.md](./ROS/Moveit!/PlanningScene_ROS_API教程.md)
-6. [MotionPlanning_API教程.md](./ROS/Moveit!/MotionPlanning_API教程.md)
+1. [MoveGroup C++接口教程](./ROS/Moveit!/Move_Group_C++接口教程.md)
+2. [RobotModel和RobotState介绍](./ROS/Moveit!/RobotModel和RobotState介绍.md)
+3. [Moveit命令行工具](./ROS/Moveit!/Moveit命令行工具.md)
+4. [PlanningScene教程](./ROS/Moveit!/PlanningScene教程.md)
+5. [PlanningScene_ROS_API教程](./ROS/Moveit!/PlanningScene_ROS_API教程.md)
+6. [MotionPlanning_API教程](./ROS/Moveit!/MotionPlanning_API教程.md)
+7. [MotionPlanning_Pipeline教程](./ROS/Moveit!/MotionPlanning_Pipeline教程.md)
+8. [碰撞可视化教程](./ROS/Moveit!/碰撞可视化教程.md)
+9. [时间参数化](./ROS/Moveit!/时间参数化.md)
 
 ### 4.2 其他
 1. [Msg类型](./ROS/Msg类型.md)
