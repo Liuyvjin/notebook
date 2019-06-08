@@ -97,6 +97,22 @@ OrientationConstraint[] orientation_constraints
 VisibilityConstraint[] visibility_constraints
 ```
 
+### 4.  DisplayTrajectory
+
+```shell
+# 这个路径是那个model的
+string model_id
+
+# 路径数据。包含沿该路径运动的所有关节的位置值;可以指定一系列轨迹
+RobotTrajectory[] trajectory
+
+# 机器人状态用于获取机器人所有/部分关节的位置。
+# 路径显示节点使用它来确定在上面的关节路径消息中没有指定的关节的位置。也即，路径消息中没有指定的关节，保持一开始trajectory_start中的默认值。路径中存在的关节，就用路径的值覆盖。
+RobotState trajectory_start
+```
+
+
+
 ## 三、shape_msgs
 
 ### 1. SolidPrimitive
@@ -126,5 +142,54 @@ uint8 CYLINDER_RADIUS=1
 #
 uint8 CONE_HEIGHT=0
 uint8 CONE_RADIUS=1
+```
+
+## 四、tf2_msgs
+
+### 1. TFMessage.msg
+
+该类型是话题/tf,/static_tf所用的消息，为变换的列表
+
+geometry_msgs/TransformStamped[] transforms
+
+```yaml
+geometry_msgs/TransformStamped[] transforms
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  string child_frame_id
+  geometry_msgs/Transform transform
+    geometry_msgs/Vector3 translation
+      float64 x
+      float64 y
+      float64 z
+    geometry_msgs/Quaternion rotation
+      float64 x
+      float64 y
+      float64 z
+      float64 w
+```
+
+## 五、geometry_msgs
+
+### 1. TransformStamped
+
+这个类型描述了一个从参考系 header.frame_id 到child_frame_id 的坐标变换。这个类型主要用在tf包中。
+
+```shell
+Header header
+# 子坐标系的编号
+string child_frame_id 
+# 一个变化
+Transform transform
+```
+
+### 2. Transform
+
+```shell
+# 空间中两个坐标系之间的变换
+Vector3 translation
+Quaternion rotation
 ```
 

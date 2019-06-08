@@ -14,7 +14,9 @@
 roslaunch moveit_tutorials motion_planning_api_tutorial.launch
 ```
 
-launch文件
+**launch文件**
+
+规划器种类必须在规划节点的命名空间中指定，参数名为`planning_plugin`
 
 ```xml
 <launch>
