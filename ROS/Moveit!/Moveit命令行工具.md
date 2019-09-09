@@ -20,7 +20,7 @@ Known commands:
   constrain <name>    使用名为<name>的路径约束
   current             输出规划组的当前状态
   database            展示当前连接的数据库（如果有的话）
-  delete <name>       删除名为<name>的joint的值
+  delete <go name>       删除名为<name>的joint的值
   eef                 输出当前规划组的末端执行器名称
   execute             执行一个已经计算好的plan
 

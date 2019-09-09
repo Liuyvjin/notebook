@@ -61,7 +61,7 @@ $$
    用算子对图像做卷积，中间点对应锚点，可分别得到中间点的x，y方向的偏导数近似，接着将其合成得：
    $$
    G=\sqrt{G_x^2+G_y^2}\\
-   \left(\text{有时也用更简单的公式代替：}G=|G_x|+|G_y|\right)\\
+   \left({有时也用更简单的公式代替：}G=|G_x|+|G_y|\right)\\
    \theta=\arctan\left(\frac{G_y}{G_x}\right)
    $$
    后面详细介绍这些算子。

@@ -97,7 +97,7 @@ OrientationConstraint[] orientation_constraints
 VisibilityConstraint[] visibility_constraints
 ```
 
-### 4.  DisplayTrajectory
+### 4. DisplayTrajectory
 
 ```shell
 # 这个路径是那个model的
